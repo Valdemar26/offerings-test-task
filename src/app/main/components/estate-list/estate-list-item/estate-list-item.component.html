@@ -1,0 +1,71 @@
+<div class="col-md-12 mb-4" *ngFor="let e of estate; let i = index;">
+  <div class="of-title">
+    <img
+      [src]="e.image"
+      [ngClass]="{'blur': i !== 0}"
+      class="w-100 h-100 of-banner"
+      alt="estate-item">
+    <div class="d-flex flex-column w-100 align-items-center of-title-name pt-3">
+      <span class="font-weight-bold">{{ e.name | uppercase }}</span>
+      <p>{{ e.city | uppercase }}</p>
+    </div>
+  </div>
+  <div class="bg-white of-wrapper">
+    <div class="p-2 pt-4 pb-4 of-invest">
+      <div class="d-flex justify-content-between">
+        <span>Available to invest</span>
+        <span *ngIf="i !== 2">CHF {{ e.invest }}</span>
+        <span *ngIf="i === 2">{{ e.invest }}</span>
+      </div>
+      <div class="row">
+        <div class="col-md-12 pt-2">
+          <div class="progress">
+            <div class="progress-bar"
+                 role="progressbar"
+                 [ngClass]="{'orange': i === 0, 'white': i === 1, 'green': i === 2}"
+                 aria-valuenow="25"
+                 aria-valuemin="0"
+                 aria-valuemax="100">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="of-table">
+      <ul class="pl-0">
+        <li class="d-flex justify-content-between p-2">
+          <span>Purchase cost</span>
+          <span>CHF {{ e.cost }}</span>
+        </li>
+        <li class="d-flex justify-content-between p-2">
+          <span>Min. Investment</span>
+          <span>CHF {{ e.min_invest }}</span>
+        </li>
+        <li class="d-flex justify-content-between p-2">
+          <span>Investment type</span>
+          <span>{{ e.type }}</span>
+        </li>
+        <li class="d-flex justify-content-between p-2">
+          <span>Mortgage (LTV)</span>
+          <span>{{ e.ltv }}%</span>
+        </li>
+        <li class="d-flex justify-content-between p-2">
+          <span>Holding period</span>
+          <span>{{ e.period }} years</span>
+        </li>
+        <li class="d-flex justify-content-between p-2">
+          <span>Expected return on equity</span>
+          <span>{{ e.equity }}%</span>
+        </li>
+      </ul>
+      <div class="row d-flex justify-content-center mt-3 of-button-wrap">
+        <button type="button"
+                class="btn btn-primary mb-4 font-weight-bold shadow-none of-button"
+                [ngClass]="{'green': i === 1, 'inline': i === 2}">
+          {{ e.button_text }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

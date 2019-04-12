@@ -1,0 +1,100 @@
+@import '../../../../assets/styles/partials/base';
+
+.row {
+  .col-md-12 {
+    .of-banner {
+      img {
+        background-size: cover;
+        background-position: center;
+      }
+    }
+    &.of-head {
+      background-color: $dark-blue;
+      color: $white;
+      span {
+        font-weight: bold;
+      }
+      p {
+        color: $light-text;
+      }
+    }
+    &.of-invest {
+      border-bottom: $border;
+      span {
+        color: $blue-text;
+      }
+    }
+  }
+  &.of-info {
+    ul {
+      li {
+        width: calc(50% - 1rem);
+        border-bottom: $border;
+        span {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  &.of-button-wrap {
+    button {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .progress {
+    height: 6px;
+    background-color: $light-orange;
+    .progress-bar {
+      background-color: $orange !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+  .row {
+    &.of-info {
+      ul {
+        li {
+          span {
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 992px) {
+  .row {
+    width: 100%;
+    margin: 0 auto;
+    .of-wrapper {
+      padding-left: 0;
+    }
+    .col-md-12 {
+      padding: 0;
+      .of-head {
+        padding-left: 30px;
+      }
+      .of-button-wrap {
+        margin-bottom: 1rem;
+      }
+    }
+    .row {
+      .of-invest {
+        .row {
+          .col-md-12 {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+}

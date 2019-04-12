@@ -1,0 +1,27 @@
+@import '../../../../assets/styles/partials/base';
+
+.row {
+  .col-md-12 {
+    ul {
+      li {
+        width: 33.333333%
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  app-estate-list-item {
+    flex-direction: column;
+  }
+  .row {
+    .col-md-12 {
+      ul {
+        flex-direction: column;
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

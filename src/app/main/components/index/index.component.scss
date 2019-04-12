@@ -1,0 +1,23 @@
+
+.container-fluid {
+  .main-row {
+    margin: 2rem 0;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+ .container-fluid {
+   overflow: hidden;
+   .row {
+     .col-md-2, .col-md-10 {
+       padding: 0;
+       &.of-header {
+       }
+     }
+     .navbar {
+       flex-direction: column;
+     }
+   }
+ }
+}
